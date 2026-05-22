@@ -2,490 +2,658 @@
 <html lang="pt-BR">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🍦 Sorveteria</title>
+    <!-- Configuração de caracteres -->
+    <meta charset="UTF-8">
 
-<style>
+    <!-- Responsividade para celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* Reset */
+    <!-- Título da página -->
+    <title>🍦 Sorveteria</title>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <style>
 
-/* Corpo do site */
+        /* =========================
+           RESET PADRÃO
+        ========================== */
 
-body{
-    font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,#ffffff,#f5f5f5);
-    padding:20px;
-}
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-/* Cabeçalho */
+        /* =========================
+           CORPO DO SITE
+        ========================== */
 
-h1{
-    text-align:center;
-    color:#ff0000;
-    margin-bottom:10px;
-}
+        body{
+            font-family:Arial, sans-serif;
 
-.subtitulo{
-    text-align:center;
-    color:#666;
-    margin-bottom:25px;
-}
+            /* Fundo em degradê */
+            background:linear-gradient(
+                135deg,
+                #ffffff,
+                #f5f5f5
+            );
 
-/* Campo de busca */
+            padding:20px;
+        }
 
-.busca{
-    width:100%;
-    padding:14px;
-    border-radius:12px;
-    border:2px solid #ff0000;
-    margin-bottom:25px;
-    font-size:16px;
-    outline:none;
-}
+        /* =========================
+           TÍTULO PRINCIPAL
+        ========================== */
 
-/* Grid dos sorvetes */
+        h1{
+            text-align:center;
+            color:#ff0000;
+            margin-bottom:10px;
+        }
 
-.sorvetes{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
+        /* Subtítulo */
 
-/* Card */
+        .subtitulo{
+            text-align:center;
+            color:#666;
+            margin-bottom:25px;
+        }
 
-.card{
-    background:white;
-    border-radius:20px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
+        /* =========================
+           CAMPO DE BUSCA
+        ========================== */
 
-.card:hover{
-    transform:scale(1.03);
-}
+        .busca{
 
-.emoji{
-    font-size:50px;
-}
+            width:100%;
 
-.card h2{
-    color:#ff0000;
-    margin:10px 0;
-}
+            padding:14px;
 
-.preco{
-    font-size:20px;
-    font-weight:bold;
-    margin-bottom:15px;
-}
+            border-radius:12px;
 
-/* Botões */
+            border:2px solid #ff0000;
 
-button{
-    background:#ff0000;
-    color:white;
-    border:none;
-    padding:12px;
-    border-radius:12px;
-    cursor:pointer;
-    font-size:15px;
-    transition:0.3s;
-}
+            margin-bottom:25px;
 
-button:hover{
-    background:#cc0000;
-}
+            font-size:16px;
 
-/* Carrinho */
+            outline:none;
+        }
 
-.pedido{
-    margin-top:35px;
-    background:white;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
+        /* =========================
+           GRID DOS SORVETES
+        ========================== */
 
-#listaPedidos li{
-    margin-bottom:8px;
-}
+        .sorvetes{
 
-#total{
-    margin-top:15px;
-    color:#ff0000;
-}
+            display:grid;
 
-/* Botão finalizar */
+            /* Responsivo automático */
+            grid-template-columns:
+            repeat(auto-fit,minmax(220px,1fr));
 
-.finalizar{
-    margin-top:20px;
-    width:100%;
-    background:#28a745;
-}
+            gap:20px;
+        }
 
-.finalizar:hover{
-    background:#218838;
-}
+        /* =========================
+           CARD DOS PRODUTOS
+        ========================== */
 
-/* Botões inferiores */
+        .card{
 
-.botoes{
-    margin-top:25px;
-    display:flex;
-    gap:15px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
+            background:white;
 
-/* Usuário */
+            border-radius:20px;
 
-.usuario{
-    text-align:center;
-    margin-top:20px;
-    color:#056dff;
-    font-weight:bold;
-}
+            padding:20px;
 
-</style>
+            text-align:center;
+
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+            transition:0.3s;
+        }
+
+        /* Efeito hover */
+
+        .card:hover{
+            transform:scale(1.03);
+        }
+
+        /* Emoji grande */
+
+        .emoji{
+            font-size:50px;
+        }
+
+        /* Nome do sorvete */
+
+        .card h2{
+            color:#ff0000;
+            margin:10px 0;
+        }
+
+        /* Preço */
+
+        .preco{
+            font-size:20px;
+            font-weight:bold;
+            margin-bottom:15px;
+        }
+
+        /* =========================
+           BOTÕES
+        ========================== */
+
+        button{
+
+            background:#ff0000;
+
+            color:white;
+
+            border:none;
+
+            padding:12px;
+
+            border-radius:12px;
+
+            cursor:pointer;
+
+            font-size:15px;
+
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#cc0000;
+        }
+
+        /* =========================
+           CARRINHO
+        ========================== */
+
+        .pedido{
+
+            margin-top:35px;
+
+            background:white;
+
+            padding:25px;
+
+            border-radius:20px;
+
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        #listaPedidos li{
+            margin-bottom:8px;
+        }
+
+        #total{
+            margin-top:15px;
+            color:#ff0000;
+        }
+
+        /* Botão finalizar */
+
+        .finalizar{
+            margin-top:20px;
+            width:100%;
+            background:#28a745;
+        }
+
+        .finalizar:hover{
+            background:#218838;
+        }
+
+        /* =========================
+           BOTÕES INFERIORES
+        ========================== */
+
+        .botoes{
+
+            margin-top:25px;
+
+            display:flex;
+
+            gap:15px;
+
+            justify-content:center;
+
+            flex-wrap:wrap;
+        }
+
+        /* =========================
+           USUÁRIO LOGADO
+        ========================== */
+
+        .usuario{
+            text-align:center;
+            margin-top:20px;
+            color:#056dff;
+            font-weight:bold;
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<h1>🍦 Sorveteria</h1>
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
 
-<p class="subtitulo">
-Os melhores sabores da cidade!
-</p>
+    <h1>🍦 Sorveteria</h1>
 
-<input
-type="text"
-id="buscar"
-class="busca"
-placeholder="Buscar sabor..."
-onkeyup="buscarSorvete()"
->
+    <p class="subtitulo">
+        Os melhores sabores da cidade!
+    </p>
 
-<!-- Container dos cards -->
+    <!-- =========================
+         CAMPO DE BUSCA
+    ========================== -->
 
-<div class="sorvetes" id="sorvetesContainer"></div>
+    <input
+        type="text"
+        id="buscar"
+        class="busca"
+        placeholder="Buscar sabor..."
+        onkeyup="buscarSorvete()"
+    >
 
-<!-- Carrinho -->
+    <!-- =========================
+         CONTAINER DOS CARDS
+    ========================== -->
 
-<div class="pedido">
+    <div
+        class="sorvetes"
+        id="sorvetesContainer"
+    ></div>
 
-<h2>🛒 Carrinho</h2>
+    <!-- =========================
+         CARRINHO
+    ========================== -->
 
-<ul id="listaPedidos"></ul>
+    <div class="pedido">
 
-<h3 id="total">
-Total: R$ 0,00
-</h3>
+        <h2>🛒 Carrinho</h2>
 
-<button class="finalizar" onclick="finalizarPedido()">
-✅ Finalizar Pedido
-</button>
+        <!-- Lista de pedidos -->
+        <ul id="listaPedidos"></ul>
 
-</div>
+        <!-- Total -->
+        <h3 id="total">
+            Total: R$ 0,00
+        </h3>
 
-<!-- Botões inferiores -->
+        <!-- Botão finalizar -->
+        <button
+            class="finalizar"
+            onclick="finalizarPedido()"
+        >
+            ✅ Finalizar Pedido
+        </button>
 
-<div class="botoes">
+    </div>
 
-<button onclick="fazerLogin()">
-👤 Entrar
-</button>
+    <!-- =========================
+         BOTÕES EXTRAS
+    ========================== -->
 
-<button onclick="abrirAjuda()">
-❓ Ajuda
-</button>
+    <div class="botoes">
 
-</div>
+        <button onclick="fazerLogin()">
+            👤 Entrar
+        </button>
 
-<h3 id="usuario" class="usuario">
-👤 Nenhum usuário logado
-</h3>
+        <button onclick="abrirAjuda()">
+            ❓ Ajuda
+        </button>
 
-<script>
+    </div>
 
-/* Lista de sabores */
+    <!-- Usuário -->
+    <h3 id="usuario" class="usuario">
+        👤 Nenhum usuário logado
+    </h3>
 
-let sabores = [];
+    <script>
 
-/* Total do carrinho */
+        /* =========================
+           ARRAY DE SABORES
+        ========================== */
 
-let total = 0;
+        let sabores = [];
 
-/* Carregar JSON */
+        /* =========================
+           TOTAL DO CARRINHO
+        ========================== */
 
-fetch('sabores.json')
+        let total = 0;
 
-.then(resposta => {
+        /* =========================
+           CARREGAR JSON
+        ========================== */
 
-    if(!resposta.ok){
+        fetch('sabores.json')
 
-        throw new Error(
-            'Erro ao carregar sabores.json'
-        );
+        .then(resposta => {
 
-    }
+            /* Verifica se houve erro */
 
-    return resposta.json();
+            if(!resposta.ok){
 
-})
+                throw new Error(
+                    'Erro ao carregar sabores.json'
+                );
 
-.then(dados => {
+            }
 
-    sabores = dados.sabores;
+            /* Converte para JSON */
 
-    renderizarCards(sabores);
+            return resposta.json();
 
-})
+        })
 
-.catch(erro => {
+        .then(dados => {
 
-    console.error(erro);
+            /* Salva os sabores */
 
-    document.getElementById(
-        'sorvetesContainer'
-    ).innerHTML =
-    '<p>Erro ao carregar sabores.</p>';
+            sabores = dados.sabores;
 
-});
+            /* Renderiza os cards */
 
-/* Renderizar cards */
+            renderizarCards(sabores);
 
-function renderizarCards(lista){
+        })
 
-    const container =
-    document.getElementById(
-        'sorvetesContainer'
-    );
+        .catch(erro => {
 
-    container.innerHTML = '';
+            console.error(erro);
 
-    lista.forEach(item => {
+            document.getElementById(
+                'sorvetesContainer'
+            ).innerHTML =
+            '<p>Erro ao carregar sabores.</p>';
 
-        const card =
-        document.createElement('div');
+        });
 
-        card.className = 'card';
+        /* =========================
+           RENDERIZAR CARDS
+        ========================== */
 
-        /* Emoji */
+        function renderizarCards(lista){
 
-        const emoji =
-        document.createElement('div');
-
-        emoji.className = 'emoji';
-        emoji.textContent = item.emoji;
-
-        /* Nome */
-
-        const titulo =
-        document.createElement('h2');
-
-        titulo.textContent = item.nome;
-
-        /* Preço */
-
-        const preco =
-        document.createElement('p');
-
-        preco.className = 'preco';
-
-        preco.textContent =
-        'R$ ' +
-        item.preco.toFixed(2)
-        .replace('.', ',');
-
-        /* Botão */
-
-        const botao =
-        document.createElement('button');
-
-        botao.textContent = 'Adicionar';
-
-        botao.onclick = function(){
-
-            adicionarPedido(
-                item.nome,
-                item.preco
+            const container =
+            document.getElementById(
+                'sorvetesContainer'
             );
 
-        };
+            /* Limpa antes de renderizar */
 
-        /* Adicionar elementos */
+            container.innerHTML = '';
 
-        card.appendChild(emoji);
-        card.appendChild(titulo);
-        card.appendChild(preco);
-        card.appendChild(botao);
+            /* Percorre os sabores */
 
-        container.appendChild(card);
+            lista.forEach(item => {
 
-    });
+                /* Cria card */
 
-}
+                const card =
+                document.createElement('div');
 
-/* Buscar sabores */
+                card.className = 'card';
 
-function buscarSorvete(){
+                /* Emoji */
 
-    let input =
-    document.getElementById('buscar')
-    .value
-    .toLowerCase();
+                const emoji =
+                document.createElement('div');
 
-    let filtrados =
-    sabores.filter(item =>
+                emoji.className = 'emoji';
 
-        item.nome
-        .toLowerCase()
-        .includes(input)
+                emoji.textContent =
+                item.emoji;
 
-    );
+                /* Nome */
 
-    renderizarCards(filtrados);
+                const titulo =
+                document.createElement('h2');
 
-}
+                titulo.textContent =
+                item.nome;
 
-/* Adicionar pedido */
+                /* Preço */
 
-function adicionarPedido(
-    sabor,
-    preco
-){
+                const preco =
+                document.createElement('p');
 
-    let lista =
-    document.getElementById(
-        'listaPedidos'
-    );
+                preco.className = 'preco';
 
-    let item =
-    document.createElement('li');
+                preco.textContent =
+                'R$ ' +
+                item.preco
+                .toFixed(2)
+                .replace('.', ',');
 
-    item.textContent =
-    sabor +
-    ' - R$ ' +
-    preco.toFixed(2)
-    .replace('.', ',');
+                /* Botão adicionar */
 
-    lista.appendChild(item);
+                const botao =
+                document.createElement('button');
 
-    total += preco;
+                botao.textContent =
+                'Adicionar';
 
-    atualizarTotal();
+                botao.onclick = function(){
 
-}
+                    adicionarPedido(
+                        item.nome,
+                        item.preco
+                    );
 
-/* Atualizar total */
+                };
 
-function atualizarTotal(){
+                /* Adiciona tudo no card */
 
-    document.getElementById('total')
-    .innerHTML =
+                card.appendChild(emoji);
+                card.appendChild(titulo);
+                card.appendChild(preco);
+                card.appendChild(botao);
 
-    'Total: R$ ' +
+                /* Adiciona card no container */
 
-    total.toFixed(2)
-    .replace('.', ',');
+                container.appendChild(card);
 
-}
+            });
 
-/* Finalizar pedido */
+        }
 
-function finalizarPedido(){
+        /* =========================
+           BUSCAR SORVETE
+        ========================== */
 
-    if(total === 0){
+        function buscarSorvete(){
 
-        alert(
-            'Seu carrinho está vazio!'
-        );
+            let input =
+            document.getElementById(
+                'buscar'
+            )
+            .value
+            .toLowerCase();
 
-        return;
+            /* Filtra sabores */
 
-    }
+            let filtrados =
+            sabores.filter(item =>
 
-    alert(
-        '🍦 Pedido realizado com sucesso!'
-    );
+                item.nome
+                .toLowerCase()
+                .includes(input)
 
-    document.getElementById(
-        'listaPedidos'
-    ).innerHTML = '';
+            );
 
-    total = 0;
+            renderizarCards(filtrados);
 
-    atualizarTotal();
+        }
 
-}
+        /* =========================
+           ADICIONAR PEDIDO
+        ========================== */
 
-/* Login */
+        function adicionarPedido(
+            sabor,
+            preco
+        ){
 
-function fazerLogin(){
+            let lista =
+            document.getElementById(
+                'listaPedidos'
+            );
 
-    let nome =
-    prompt(
-        'Digite seu nome:'
-    );
+            /* Cria item da lista */
 
-    if(
-        nome &&
-        nome.trim() !== ''
-    ){
+            let item =
+            document.createElement('li');
 
-        document.getElementById(
-            'usuario'
-        ).innerHTML =
+            item.textContent =
+            sabor +
+            ' - R$ ' +
+            preco
+            .toFixed(2)
+            .replace('.', ',');
 
-        '👤 Usuário: ' + nome;
+            /* Adiciona item */
 
-        alert(
-            'Bem-vindo(a), ' +
-            nome +
-            '! 🍦'
-        );
+            lista.appendChild(item);
 
-    }else{
+            /* Soma total */
 
-        alert(
-            'Digite um nome válido!'
-        );
+            total += preco;
 
-    }
+            atualizarTotal();
 
-}
+        }
 
-/* Ajuda */
+        /* =========================
+           ATUALIZAR TOTAL
+        ========================== */
 
-function abrirAjuda(){
+        function atualizarTotal(){
 
-    alert(
+            document.getElementById(
+                'total'
+            ).innerHTML =
 
-        '🍦 AJUDA DA SORVETERIA\n\n' +
+            'Total: R$ ' +
 
-        '• Busque sabores na barra de pesquisa.\n' +
+            total
+            .toFixed(2)
+            .replace('.', ',');
 
-        '• Clique em Adicionar para colocar no carrinho.\n' +
+        }
 
-        '• Finalize o pedido no botão verde.\n' +
+        /* =========================
+           FINALIZAR PEDIDO
+        ========================== */
 
-        '• Faça login para entrar no sistema.'
+        function finalizarPedido(){
 
-    );
+            /* Verifica se o carrinho está vazio */
 
-}
+            if(total === 0){
 
-</script>
+                alert(
+                    'Seu carrinho está vazio!'
+                );
+
+                return;
+
+            }
+
+            /* Mensagem */
+
+            alert(
+                '🍦 Pedido realizado com sucesso!'
+            );
+
+            /* Limpa carrinho */
+
+            document.getElementById(
+                'listaPedidos'
+            ).innerHTML = '';
+
+            /* Zera total */
+
+            total = 0;
+
+            atualizarTotal();
+
+        }
+
+        /* =========================
+           LOGIN
+        ========================== */
+
+        function fazerLogin(){
+
+            let nome =
+            prompt(
+                'Digite seu nome:'
+            );
+
+            /* Validação */
+
+            if(
+                nome &&
+                nome.trim() !== ''
+            ){
+
+                document.getElementById(
+                    'usuario'
+                ).innerHTML =
+
+                '👤 Usuário: ' + nome;
+
+                alert(
+                    'Bem-vindo(a), ' +
+                    nome +
+                    '! 🍦'
+                );
+
+            }else{
+
+                alert(
+                    'Digite um nome válido!'
+                );
+
+            }
+
+        }
+
+        /* =========================
+           AJUDA
+        ========================== */
+
+        function abrirAjuda(){
+
+            alert(
+
+                '🍦 AJUDA DA SORVETERIA\n\n' +
+
+                '• Busque sabores na barra de pesquisa.\n' +
+
+                '• Clique em Adicionar para colocar no carrinho.\n' +
+
+                '• Finalize o pedido no botão verde.\n' +
+
+                '• Faça login para entrar no sistema.'
+
+            );
+
+        }
+
+    </script>
 
 </body>
+
 </html>
