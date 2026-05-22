@@ -1,18 +1,15 @@
-<!--Base feita em HTLM-->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🍦 Sorveteria </title>
-
-<!--Estilização-->
+<title>🍦 Sorveteria</title>
 
 <style>
 
-/* Estilização so site*/
+/* Reset */
 
 *{
     margin:0;
@@ -20,16 +17,15 @@
     box-sizing:border-box;
 }
 
-/* Fonte, cores de fundo*/
+/* Corpo do site */
 
 body{
     font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,rgb(255, 255, 255),#ffffff);
+    background:linear-gradient(135deg,#ffffff,#f5f5f5);
     padding:20px;
 }
 
-
-/* Estilização do cabeçário*/ 
+/* Cabeçalho */
 
 h1{
     text-align:center;
@@ -43,6 +39,8 @@ h1{
     margin-bottom:25px;
 }
 
+/* Campo de busca */
+
 .busca{
     width:100%;
     padding:14px;
@@ -50,7 +48,10 @@ h1{
     border:2px solid #ff0000;
     margin-bottom:25px;
     font-size:16px;
+    outline:none;
 }
+
+/* Grid dos sorvetes */
 
 .sorvetes{
     display:grid;
@@ -58,8 +59,10 @@ h1{
     gap:20px;
 }
 
+/* Card */
+
 .card{
-    background:rgb(255, 255, 255);
+    background:white;
     border-radius:20px;
     padding:20px;
     text-align:center;
@@ -86,9 +89,10 @@ h1{
     margin-bottom:15px;
 }
 
-/* */
+/* Botões */
+
 button{
-    background:rgb(255, 0, 0);
+    background:#ff0000;
     color:white;
     border:none;
     padding:12px;
@@ -99,12 +103,14 @@ button{
 }
 
 button:hover{
-    background:#ff0000;
+    background:#cc0000;
 }
+
+/* Carrinho */
 
 .pedido{
     margin-top:35px;
-    background:rgb(255, 255, 255);
+    background:white;
     padding:25px;
     border-radius:20px;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
@@ -119,6 +125,8 @@ button:hover{
     color:#ff0000;
 }
 
+/* Botão finalizar */
+
 .finalizar{
     margin-top:20px;
     width:100%;
@@ -129,6 +137,8 @@ button:hover{
     background:#218838;
 }
 
+/* Botões inferiores */
+
 .botoes{
     margin-top:25px;
     display:flex;
@@ -136,6 +146,8 @@ button:hover{
     justify-content:center;
     flex-wrap:wrap;
 }
+
+/* Usuário */
 
 .usuario{
     text-align:center;
@@ -149,7 +161,7 @@ button:hover{
 
 <body>
 
-<h1>🍦 Sorveteria </h1>
+<h1>🍦 Sorveteria</h1>
 
 <p class="subtitulo">
 Os melhores sabores da cidade!
@@ -163,99 +175,11 @@ placeholder="Buscar sabor..."
 onkeyup="buscarSorvete()"
 >
 
-<div class="sorvetes">
+<!-- Container dos cards -->
 
-<div class="card">
-<div class="emoji">🍫</div>
-<h2>Chocolate</h2>
-<p class="preco">R$ 10,00</p>
-<button onclick="adicionarPedido('Chocolate',10)">
-Adicionar
-</button>
-</div>
+<div class="sorvetes" id="sorvetesContainer"></div>
 
-<div class="card">
-<div class="emoji">🍓</div>
-<h2>Morango</h2>
-<p class="preco">R$ 12,00</p>
-<button onclick="adicionarPedido('Morango',12)">
-Adicionar
-</button>
-</div>
-
-<div class="card">
-<div class="emoji">🍦</div>
-<h2>Baunilha</h2>
-<p class="preco">R$ 9,00</p>
-<button onclick="adicionarPedido('Baunilha',9)">
-Adicionar
-</button>
-</div>
-
-<div class="card">
-<div class="emoji">🍋</div>
-<h2>Limão</h2>
-<p class="preco">R$ 11,00</p>
-<button onclick="adicionarPedido('Limão',11)">
-Adicionar
-</button>
-</div>
-
-<div class="card">
-<div class="emoji">🍪</div>
-<h2>Oreo</h2>
-<p class="preco">R$ 14,00</p>
-<button onclick="adicionarPedido('Oreo',14)">
-Adicionar
-</button>
-</div>
-
-<div class="card">
-<div class="emoji">🥛</div>
-<h2>Leite Ninho</h2>
-<p class="preco">R$ 19,00</p>
-<button onclick="adicionarPedido('Leite Ninho',19)">
-Adicionar
-</button>
-</div>
-
-<div class="card">
-<div class="emoji">🍌</div>
-<h2>Banana</h2>
-<p class="preco">R$ 18,00</p>
-<button onclick="adicionarPedido('Banana',18)">
-Adicionar
-</button>
-</div>
-
-<div class="card">
-<div class="emoji">🍎</div>
-<h2>Fruta Vermelha</h2>
-<p class="preco">R$ 18,00</p>
-<button onclick="adicionarPedido('Fruta Vermelha',18)">
-Adicionar
-</button>
-</div>
-
-<div class="card">
-<div class="emoji">🌾</div>
-<h2>Granola</h2>
-<p class="preco">R$ 10,00</p>
-<button onclick="adicionarPedido('Granola',10)">
-Adicionar
-</button>
-</div>
-
-<div class="card">
-<div class="emoji">🥜</div>
-<h2>Amendoim</h2>
-<p class="preco">R$ 18,00</p>
-<button onclick="adicionarPedido('Amendoim',18)">
-Adicionar
-</button>
-</div>
-
-</div>
+<!-- Carrinho -->
 
 <div class="pedido">
 
@@ -272,6 +196,8 @@ Total: R$ 0,00
 </button>
 
 </div>
+
+<!-- Botões inferiores -->
 
 <div class="botoes">
 
@@ -291,45 +217,167 @@ Total: R$ 0,00
 
 <script>
 
-function buscarSorvete(){
+/* Lista de sabores */
 
-    let input = document
-    .getElementById('buscar')
-    .value
-    .toLowerCase();
+let sabores = [];
 
-    let cards = document.getElementsByClassName('card');
-
-    for(let i = 0; i < cards.length; i++){
-
-        let titulo = cards[i]
-        .getElementsByTagName('h2')[0];
-
-        if(
-            titulo.innerHTML
-            .toLowerCase()
-            .indexOf(input) > -1
-        ){
-            cards[i].style.display = '';
-
-        }else{
-            cards[i].style.display = 'none';
-        }
-
-    }
-
-}
+/* Total do carrinho */
 
 let total = 0;
 
-function adicionarPedido(sabor, preco){
+/* Carregar JSON */
 
-    let lista = document.getElementById('listaPedidos');
+fetch('sabores.json')
 
-    let item = document.createElement('li');
+.then(resposta => {
+
+    if(!resposta.ok){
+
+        throw new Error(
+            'Erro ao carregar sabores.json'
+        );
+
+    }
+
+    return resposta.json();
+
+})
+
+.then(dados => {
+
+    sabores = dados.sabores;
+
+    renderizarCards(sabores);
+
+})
+
+.catch(erro => {
+
+    console.error(erro);
+
+    document.getElementById(
+        'sorvetesContainer'
+    ).innerHTML =
+    '<p>Erro ao carregar sabores.</p>';
+
+});
+
+/* Renderizar cards */
+
+function renderizarCards(lista){
+
+    const container =
+    document.getElementById(
+        'sorvetesContainer'
+    );
+
+    container.innerHTML = '';
+
+    lista.forEach(item => {
+
+        const card =
+        document.createElement('div');
+
+        card.className = 'card';
+
+        /* Emoji */
+
+        const emoji =
+        document.createElement('div');
+
+        emoji.className = 'emoji';
+        emoji.textContent = item.emoji;
+
+        /* Nome */
+
+        const titulo =
+        document.createElement('h2');
+
+        titulo.textContent = item.nome;
+
+        /* Preço */
+
+        const preco =
+        document.createElement('p');
+
+        preco.className = 'preco';
+
+        preco.textContent =
+        'R$ ' +
+        item.preco.toFixed(2)
+        .replace('.', ',');
+
+        /* Botão */
+
+        const botao =
+        document.createElement('button');
+
+        botao.textContent = 'Adicionar';
+
+        botao.onclick = function(){
+
+            adicionarPedido(
+                item.nome,
+                item.preco
+            );
+
+        };
+
+        /* Adicionar elementos */
+
+        card.appendChild(emoji);
+        card.appendChild(titulo);
+        card.appendChild(preco);
+        card.appendChild(botao);
+
+        container.appendChild(card);
+
+    });
+
+}
+
+/* Buscar sabores */
+
+function buscarSorvete(){
+
+    let input =
+    document.getElementById('buscar')
+    .value
+    .toLowerCase();
+
+    let filtrados =
+    sabores.filter(item =>
+
+        item.nome
+        .toLowerCase()
+        .includes(input)
+
+    );
+
+    renderizarCards(filtrados);
+
+}
+
+/* Adicionar pedido */
+
+function adicionarPedido(
+    sabor,
+    preco
+){
+
+    let lista =
+    document.getElementById(
+        'listaPedidos'
+    );
+
+    let item =
+    document.createElement('li');
 
     item.textContent =
-    sabor + ' - R$ ' + preco + ',00';
+    sabor +
+    ' - R$ ' +
+    preco.toFixed(2)
+    .replace('.', ',');
 
     lista.appendChild(item);
 
@@ -339,42 +387,66 @@ function adicionarPedido(sabor, preco){
 
 }
 
+/* Atualizar total */
+
 function atualizarTotal(){
 
     document.getElementById('total')
     .innerHTML =
-    'Total: R$ ' + total + ',00';
+
+    'Total: R$ ' +
+
+    total.toFixed(2)
+    .replace('.', ',');
 
 }
+
+/* Finalizar pedido */
 
 function finalizarPedido(){
 
     if(total === 0){
 
-        alert('Seu carrinho está vazio!');
+        alert(
+            'Seu carrinho está vazio!'
+        );
 
         return;
 
     }
-}
-    alert('🍦 Pedido realizado com sucesso!');
 
-    document.getElementById('listaPedidos')
-    .innerHTML = '';
+    alert(
+        '🍦 Pedido realizado com sucesso!'
+    );
+
+    document.getElementById(
+        'listaPedidos'
+    ).innerHTML = '';
 
     total = 0;
 
-    atualizarTotal(); 
+    atualizarTotal();
 
+}
+
+/* Login */
 
 function fazerLogin(){
 
-    let nome = prompt('Digite seu nome:');
+    let nome =
+    prompt(
+        'Digite seu nome:'
+    );
 
-    if(nome && nome.trim() !== ''){
+    if(
+        nome &&
+        nome.trim() !== ''
+    ){
 
-        document.getElementById('usuario')
-        .innerHTML =
+        document.getElementById(
+            'usuario'
+        ).innerHTML =
+
         '👤 Usuário: ' + nome;
 
         alert(
@@ -385,22 +457,30 @@ function fazerLogin(){
 
     }else{
 
-        alert('Digite um nome válido!');
+        alert(
+            'Digite um nome válido!'
+        );
 
     }
 
 }
 
-
+/* Ajuda */
 
 function abrirAjuda(){
 
     alert(
+
         '🍦 AJUDA DA SORVETERIA\n\n' +
+
         '• Busque sabores na barra de pesquisa.\n' +
+
         '• Clique em Adicionar para colocar no carrinho.\n' +
+
         '• Finalize o pedido no botão verde.\n' +
+
         '• Faça login para entrar no sistema.'
+
     );
 
 }
