@@ -28,8 +28,4 @@ A parte mais simples foi desenvolver as ideias principais do projeto, porque tod
 
 Esse projeto foi muito importante para nosso aprendizado, porque conseguimos colocar em prática vários conhecimentos de programação. Trabalhar em equipe ajudou bastante no desenvolvimento do projeto e tornou a experiência mais interessante e produtiva.
 
-
 Através desse projeto aprendemos não apenas sobre programação, mas também sobre colaboração, responsabilidade e resolução de problemas.
-
-Através desse projeto aprendemos não apenas sobre programação, mas também sobre colaboração, responsabilidade e resolução de problemas.
-
